@@ -9,18 +9,19 @@ public class Actor {
 
     private int id;
     private String name;
-    private int cast_id;
-    private double salary;
+    private double dayRate;
+    private Cast cast;
+
 //    private boolean availability;
 
     public Actor() {
     }
 
-    public Actor(String name, double salary, int cast_id) {
+    public Actor(String name, double dayRate) {
         this.id = id;
         this.name = name;
-        this.salary = salary;
-        this.cast_id = cast_id;
+        this.dayRate = dayRate;
+
 
     }
     @Id
@@ -41,22 +42,23 @@ public class Actor {
     public void setName(String name) {
         this.name = name;
     }
-    @Column(name ="salary")
-    public double getSalary() {
-        return salary;
+    @Column(name ="day_rate")
+    public double getDayRate() {
+        return dayRate;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setSalary(double dayRate) {
+        this.dayRate = dayRate;
     }
 
     @ManyToOne()
     @JoinColumn(name = "cast_id", nullable = false)
-    public int getCast_id() {
-        return cast_id;
+    public Cast getCast() {
+        return cast;
     }
 
-    public void setCast_id(int cast_id) {
-        this.cast_id = cast_id;
+    public void setCast(Cast cast) {
+        this.cast = cast;
     }
+
 }

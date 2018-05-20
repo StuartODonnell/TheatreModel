@@ -1,7 +1,10 @@
 package theatre.models;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "authors")
 public class Author {
 
     private int id;
@@ -16,7 +19,9 @@ public class Author {
         this.name = name;
         this.plays = plays;
     }
-
+@Id
+@GeneratedValue
+@Column(name = "id")
     public int getId() {
         return id;
     }
@@ -24,7 +29,7 @@ public class Author {
     public void setId(int id) {
         this.id = id;
     }
-
+    @Column(name = "author_name")
     public String getName() {
         return name;
     }
@@ -33,6 +38,7 @@ public class Author {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "author")
     public List<Play> getPlays() {
         return plays;
     }
