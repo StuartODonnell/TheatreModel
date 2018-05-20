@@ -14,7 +14,7 @@ public class Author {
     public Author() {
     }
 
-    public Author(String name, List<Play> plays) {
+    public Author(String name) {
         this.id = id;
         this.name = name;
         this.plays = plays;

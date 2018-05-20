@@ -1,3 +1,5 @@
+package theatre;
+
 import org.junit.Before;
 import org.junit.Test;
 import theatre.models.Actor;

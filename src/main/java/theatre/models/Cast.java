@@ -15,7 +15,9 @@ public class Cast {
     }
 
     public Cast(Play play) {
+        this.id = id;
         this.play = play;
+        this.cast = cast;
     }
     @Id
     @GeneratedValue
@@ -43,6 +45,7 @@ public class Cast {
     public void setCast(Set<Actor> cast) {
         this.cast = cast;
     }
+
     @Column (name = "cast_day_rate")
     public double getCastDayRate(){
         double castDayRate = 0;
@@ -51,5 +54,13 @@ public class Cast {
         }
 
         return castDayRate;
+    }
+
+    public void addActorToCast(Actor actor){
+        this.cast.add(actor);
+    }
+
+    public int countActorsInCast() {
+        return this.cast.size();
     }
 }

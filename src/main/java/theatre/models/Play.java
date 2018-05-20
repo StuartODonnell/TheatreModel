@@ -19,7 +19,7 @@ public class Play {
     public Play() {
     }
 
-    public Play(String name, List<Cast> cast, double ticketPrice, int numberOfPerformances, Author author, models.Venue venue) {
+    public Play(String name, double ticketPrice, int numberOfPerformances, Author author, models.Venue venue) {
         this.name = name;
         this.cast = cast;
         this.ticketPrice = ticketPrice;

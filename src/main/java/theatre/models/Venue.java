@@ -10,22 +10,22 @@ import java.util.List;
 
 public class Venue {
 
-private int id;
-private String name;
-private int audience;
-private List<Play> plays;
+    private int id;
+    private String name;
+    private int audience;
+    private List<Play> plays;
 
     public Venue() {
     }
 
-    public Venue(String name, int audience, List<Play> plays) {
+    public Venue(String name, int audience) {
         this.name = name;
         this.audience = audience;
         this.plays = plays;
     }
-@Id
-@GeneratedValue
-@Column(name = "id")
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -50,7 +50,7 @@ private List<Play> plays;
         this.audience = audience;
     }
 
-//    public double boxOfficeTakings(Cast cast){
+    //    public double boxOfficeTakings(Cast cast){
 //        return (this.audience * cast.getCastDayRate());
 //    }
 //
@@ -58,7 +58,7 @@ private List<Play> plays;
 //        return (venue.boxOfficeTakings(cast) - play.getPerformanceCost(play, cast));
 //    }
 //
-@OneToMany(mappedBy = "venue")
+    @OneToMany(mappedBy = "venue")
     public List<Play> getPlays() {
         return plays;
     }
