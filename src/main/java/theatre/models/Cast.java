@@ -10,6 +10,7 @@ public class Cast {
     private int id;
     private Play play;
     private Set<Actor> cast;
+    private double castDayRate;
 
     public Cast() {
     }
@@ -18,9 +19,10 @@ public class Cast {
         this.id = id;
         this.play = play;
         this.cast = cast;
+        this.castDayRate = castDayRate;
     }
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -29,14 +31,14 @@ public class Cast {
     public void setId(int id) {
         this.id = id;
     }
-    @Column(name = "play")
-    public Play getPlay() {
-        return play;
-    }
-
-    public void setPlay(Play play) {
-        this.play = play;
-    }
+//    @Column(name = "play")
+//    public Play getPlay() {
+//        return play;
+//    }
+//
+//    public void setPlay(Play play) {
+//        this.play = play;
+//    }
     @OneToMany(mappedBy = "cast")
     public Set<Actor> getCast() {
         return cast;
@@ -54,6 +56,10 @@ public class Cast {
         }
 
         return castDayRate;
+    }
+
+    public void setCastDayRate(){
+        this.castDayRate = castDayRate;
     }
 
     public void addActorToCast(Actor actor){

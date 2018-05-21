@@ -5,17 +5,17 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">create-drop</property>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://localhost/theatredb</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
         <property name="connection.pool_size">1</property>
         <property name="show_sql">true</property>
-        <mapping class ="models.Actor"/>
-        <mapping class ="models.Author"/>
-        <mapping class ="models.CAst"/>
-        <mapping class ="models.Play"/>
-        <mapping class ="models.Venue"/>
+        <mapping class ="theatre.models.Actor"/>
+        <!--<mapping class ="theatre.models.Author"/>-->
+        <!--<mapping class ="theatre.models.Cast"/>-->
+        <!--<mapping class ="theatre.models.Play"/>-->
+        <!--<mapping class ="theatre.models.Venue"/>-->
 
     </session-factory>
 </hibernate-configuration>

@@ -47,7 +47,7 @@ public class Actor {
         return dayRate;
     }
 
-    public void setSalary(double dayRate) {
+    public void setDayRate(double dayRate) {
         this.dayRate = dayRate;
     }
 

@@ -24,7 +24,7 @@ public class Venue {
         this.plays = plays;
     }
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
